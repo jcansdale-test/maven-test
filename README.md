@@ -32,7 +32,7 @@ Added following element to end of `pom.xml` file:
   </distributionManagement>
 ```
 
-Create or update the file at `~/.m2/settings.xml`:
+Create `settings.xml` file:
 
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -42,17 +42,19 @@ Create or update the file at `~/.m2/settings.xml`:
   <servers>
     <server>
       <id>github</id>
-      <username>jcansdale-test</username>
-      <password>GITHUB_TOKEN</password>
+      <username>PersonalAccessToken</username>
+      <password>${token}</password>
     </server>
   </servers>
 </settings>
 ```
 
+You can also create `~/.m2/settings.xml` and not specify `-s settings.xml` below.
+
 Publish the package:
 
 ```
-mvn deploy
+mvn deploy -D token=GITHUB_TOKEN -s settings.xml
 ```
 
 ## References
