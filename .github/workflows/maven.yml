@@ -13,5 +13,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Deploy with Maven
-      run: mvn deploy -Dtoken=${{ secrets.GITHUB_TOKEN }} -s settings.xml
+    - run: mvn javadoc:jar
+    - run: mvn deploy -Dtoken=${{ secrets.GITHUB_TOKEN }} -s settings.xml
