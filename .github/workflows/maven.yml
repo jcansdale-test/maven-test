@@ -1,6 +1,11 @@
 name: Java CI
 
-on: [push]
+on:
+  push:
+
+  # trigger when starred
+  watch:
+    types: [started]  
 
 jobs:
   build:
