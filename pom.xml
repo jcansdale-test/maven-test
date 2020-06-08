@@ -10,7 +10,7 @@
     <repository>
       <id>github</id> <!-- this needs to match server id in settings.xml -->
       <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/jcansdale-test/maven-test</url> <!-- associated repository -->
+      <url>https://token:${token}@maven.pkg.github.com/jcansdale-test/maven-test</url> <!-- associated repository -->
     </repository>
   </distributionManagement>
 
