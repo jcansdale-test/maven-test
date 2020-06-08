@@ -10,7 +10,7 @@
     <repository>
       <id>maven-test</id>
       <name>GitHub Packages</name>
-      <url>https://token:${token}@maven.pkg.github.com/jcansdale-test/maven-test</url> <!-- associated repository -->
+      <url>https://token:${env.GITHUB_TOKEN}@maven.pkg.github.com/jcansdale-test/maven-test</url> <!-- associated repository -->
     </repository>
   </distributionManagement>
 
