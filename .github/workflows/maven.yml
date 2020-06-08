@@ -19,4 +19,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Deploy with Maven
-      run: mvn deploy -Dtoken=${{ secrets.GITHUB_TOKEN }}
+      run: mvn deploy
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
