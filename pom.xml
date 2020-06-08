@@ -8,9 +8,9 @@
   <version>1.3-SNAPSHOT</version> <!-- package version -->
   <distributionManagement>
     <repository>
-      <id>github</id> <!-- this needs to match server id in settings.xml -->
-      <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/jcansdale-test/maven-test</url> <!-- associated repository -->
+      <id>maven-test</id>
+      <name>GitHub Packages</name>
+      <url>https://token:${env.GITHUB_TOKEN}@maven.pkg.github.com/jcansdale-test/maven-test</url> <!-- associated repository -->
     </repository>
   </distributionManagement>
 
