@@ -20,7 +20,8 @@ jobs:
       with:
         java-version: 1.8
 
-    - run: |
+    - name: Delete SNAPSHOT version
+      run: |
         dotnet tool install gpr -g
         gpr delete ${{ github.repository }}/com.mycompany.app.my-app -k ${{ github.token }} --version 0.111-SNAPSHOT
 
