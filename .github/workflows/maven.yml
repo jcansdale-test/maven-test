@@ -22,7 +22,7 @@ jobs:
 
     - run: |
         dotnet tool install gpr -g
-        gpr delete ${{ github.repository }}/com.mycompany.app.my-app -k ${{ github.token }}/0.111-SNAPSHOT
+        gpr delete ${{ github.repository }}/com.mycompany.app.my-app -k ${{ github.token }} --version 0.111-SNAPSHOT
 
     - name: Deploy with Maven
       run: mvn deploy -s settings.xml
