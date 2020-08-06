@@ -21,9 +21,7 @@ jobs:
         java-version: 1.8
 
     - name: Delete SNAPSHOT version
-      run: |
-        dotnet tool install gpr -g
-        gpr delete ${{ github.repository }}/com.mycompany.app.my-app -k ${{ github.token }} --version 0.111-SNAPSHOT
+      run: docker run jcansdale/gpr delete ${{ github.repository }}/com.mycompany.app.my-app -k ${{ github.token }} --version 0.111-SNAPSHOT
 
     - name: Deploy with Maven
       run: mvn deploy -s settings.xml
