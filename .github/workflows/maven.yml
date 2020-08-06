@@ -21,7 +21,7 @@ jobs:
         java-version: 1.8
 
     - name: Delete SNAPSHOT version
-      run: docker run jcansdale/gpr:0.1.226 delete ${{ github.repository }}/com.mycompany.app.my-app -k ${{ github.token }} --version 0.111-SNAPSHOT
+      run: docker run jcansdale/gpr:0.1.226 delete ${{ github.repository }}/com.mycompany.app.my-app -k ${{ github.token }} --version 0.111-SNAPSHOT --force
       
     - name: Deploy with Maven
       run: mvn deploy -s settings.xml
