@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId> <!-- package name -->
-  <version>1.3-beta2</version> <!-- package version -->
+  <version>${env.GITHUB_TOKEN}</version> <!-- package version -->
   <distributionManagement>
     <repository>
       <id>github</id> <!-- this needs to match server id in settings.xml -->
