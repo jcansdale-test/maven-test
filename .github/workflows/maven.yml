@@ -9,6 +9,10 @@ on:
 
 jobs:
   build:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [0.1, 0.1.0, 0.1.1, 0.1.0-SNAPSHOT, 0.1.1-SNAPSHOT, 0.1.0-beta, 0.1.1-beta, 0.1.0-beta2, 0.1.1-beta2]
 
     runs-on: ubuntu-latest
 
@@ -22,3 +26,4 @@ jobs:
       run: mvn deploy -s settings.xml --no-transfer-progress
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VERSION: ${{ matrix.version }}
