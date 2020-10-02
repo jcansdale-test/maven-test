@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Deploy with Maven
-      run: mvn deploy -s settings.xml
+      run: mvn deploy -s settings.xml --no-transfer-progress
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VERSION: ${{ env.VERSION }}
