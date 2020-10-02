@@ -9,6 +9,8 @@ on:
 
 jobs:
   build:
+    env:
+      VERSION: "1.${{ github.run_id }}.${{ strategy.job-index }}-test"
 
     runs-on: ubuntu-latest
 
@@ -22,3 +24,4 @@ jobs:
       run: mvn deploy -s settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VERSION: ${{ env.VERSION }}
