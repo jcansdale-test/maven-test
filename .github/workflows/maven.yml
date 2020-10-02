@@ -14,7 +14,7 @@ jobs:
         attempt: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
     env:
-      VERSION: "1.${{ github.run_id }}.${{ strategy.job-index }}-test"
+      VERSION: "1.2.3-test-${{ github.run_id }}-${{ strategy.job-index }}"
 
     runs-on: ubuntu-latest
 
