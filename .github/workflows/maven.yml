@@ -9,6 +9,10 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        attempt: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
     env:
       VERSION: "1.${{ github.run_id }}.${{ strategy.job-index }}-test"
 
