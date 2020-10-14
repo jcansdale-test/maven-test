@@ -19,6 +19,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Deploy with Maven
-      run: mvn deploy -s settings.xml -Dorg.slf4j.simpleLogger.log.org.apache.maven.wagon.providers.http.httpclient=trace
+      run: mvn deploy -s settings.xml -Dorg.slf4j.simpleLogger.log.org.apache.maven.wagon.providers.http.httpclient.wire=trace
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
