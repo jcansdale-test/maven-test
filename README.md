@@ -42,8 +42,8 @@ Create `settings.xml` file:
   <servers>
     <server>
       <id>github</id>
-      <username>PersonalAccessToken</username>
-      <password>${token}</password>
+      <username>token</username>
+      <password>${env.GITHUB_TOKEN}</password>
     </server>
   </servers>
 </settings>
