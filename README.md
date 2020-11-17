@@ -54,7 +54,8 @@ You can also create `~/.m2/settings.xml` and not specify `-s settings.xml` below
 Publish the package:
 
 ```
-mvn deploy -D token=GITHUB_TOKEN -s settings.xml
+export GITHUB_TOKEN=<token with `repo` and `write:packages` scopes>
+mvn deploy -s settings.xml
 ```
 
 ## References
