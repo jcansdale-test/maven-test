@@ -9,6 +9,12 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        size: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152]
+
+    env:
+      VERSION: "1.2.3-test-${{ github.run_id }}-${{ matrix.size }}"
 
     runs-on: ubuntu-latest
 
@@ -18,7 +24,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+
+    - run: dd if=/dev/random of=src/main/resources/embedded.txt count=${{ matrix.size }} bs=1024
+
     - name: Deploy with Maven
-      run: mvn deploy -s settings.xml
+      run: mvn deploy -s settings.xml --no-transfer-progress
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VERSION: ${{ env.VERSION }}
