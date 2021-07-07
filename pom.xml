@@ -14,7 +14,7 @@
     </repository>
   </distributionManagement>
 
-  <artifactId>my-app</artifactId>
+  <artifactId>my-app_1.0</artifactId>
   <name>my-app</name>
   <url>https://github.com/jcansdale-test/maven-test</url>
 
